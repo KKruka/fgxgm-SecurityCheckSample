@@ -1,8 +1,7 @@
-# Stage 1: Use Node.js image
-FROM node:18.21.0 AS node_build
+FROM python:3.14-rc-alpine3.20
 
-# Install Node.js dependencies
-RUN npm install -g npm@9.1.3
+# Install necessary dependencies and your application steps
+RUN pip install --no-cache-dir -r requirements.txt
 
 ADD package.json .
 ADD index.js .
